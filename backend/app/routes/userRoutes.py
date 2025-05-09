@@ -5,6 +5,14 @@ from app.database import db
 from app.auth import create_access_token, get_current_user
 from passlib.context import CryptContext
 
+
+# TODO: Register nur für Admins erlauben (in admin panel) -> nur admin kann user anlegen
+#       Bei login: role abfragen (user/planner/admin) -> dann den richtigen token zurückgeben -> Technician sieht nur Startseite mit Aufträge
+#                                                                                                Planner zusätzlich das Fragment auftragerstellen
+#                                                                                                Admin sieht alles also zusätzlich noch sein panel                                           
+
+
+
 router = APIRouter()
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -52,3 +60,4 @@ async def login(user: UserLogin):
     )
     return {"access_token": access_token, "token_type": "bearer"}
     
+

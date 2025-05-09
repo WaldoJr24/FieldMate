@@ -6,13 +6,15 @@ class UserCreate(BaseModel):
     username: str = Field(..., min_length=3, max_length=50)
     email: str
     password: str = Field(..., min_length=8)
+    role: str = Field(default="technician", description="User role")
 
     class Config:
         schema_extra = {
             "example": {
                 "username": "maxmustermann",
                 "email": "max@example.com",
-                "password": "supersecret123"
+                "password": "supersecret123",
+                "role": "technician"
             }
         }
 
