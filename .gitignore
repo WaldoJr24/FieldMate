@@ -4,10 +4,10 @@ __pycache__/
 *.so
 
 # Virtual environment
-venv/
-ENV/
-env/
-.venv/
+backend/venv/
+backend/ENV/
+backend/env/
+backend/.venv/
 
 # VS Code
 .vscode/
